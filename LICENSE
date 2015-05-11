@@ -1,0 +1,10 @@
+The file SQLTextBox.cs in ModuleTree/SQL/ is a modified version of http://www.codeproject.com/Articles/10675/Enabling-syntax-highlighting-in-a-RichTextBox and property of Patrik Svensson.
+Every other bit of code in this project is free to use, modify, and distribute as you please.
+
+The images box.png and icon.ico (including iconclear.ico and modicon.ico) are modified properties of iconmonstr (http://iconmonstr.com/).
+
+The image SQL_Connect is comprised of a globe the property of the US Government (no I'm not kidding) and is free to distribute, the plugs in the image however are from an unknown source and unknown license and is best to not modify or distribute (oops).
+
+The images MACRO_off.ico and .png, MACRO_on.ico and png, SQL_database.png, SQL_drop.png, SQL_dump.png, SQL_edit.png, SQL_empty.png, SQL_folder_database.png, SQL_folder_table.png, SQL_hourglass.png, SQL_insert.png, SQL_loading.gif, SQL_query.png and SQL_query_icon.ico, SQL_remove.png, SQL_table.png, SQL_table_error.png are all property of FamFamFam (http://www.famfamfam.com/lab/icons/silk/) and is licensed under the Creative Commons Attribution 3.0 License (http://creativecommons.org/licenses/by/3.0/).
+
+The images SQL_icon.ico and SQL_icon.png are properties of myself (AlphaDelta) and are free to use, modify, and distribute as you please.
