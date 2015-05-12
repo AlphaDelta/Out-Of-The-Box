@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using OutOfTheBox.Common;
 
 namespace OutOfTheBox.Modules
 {
@@ -18,10 +19,15 @@ namespace OutOfTheBox.Modules
             info.ShowAlways = true;
             txtFormat.MouseHover += (object sender, EventArgs e) => { info.Show("^N = File name\n^P = Part number\n^E = Extension", txtFormat, 0, txtFormat.Height); };
             txtFormat.MouseLeave += (object sender, EventArgs e) => { info.Hide(txtFormat); };
+
+            string format = "";
+            if (Settings.Get<string>("SPLIT_format", ref format)) txtFormat.Text = format;
         }
 
         private void btnSplit_Click(object sender, EventArgs e)
         {
+            Settings.Set<string>("SPLIT_format", txtFormat.Text);
+
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.CheckFileExists = true;
             ofd.CheckPathExists = true;

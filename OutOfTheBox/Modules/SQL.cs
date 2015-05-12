@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using OutOfTheBox.Common;
 
 namespace OutOfTheBox.Modules
 {
@@ -46,6 +47,19 @@ namespace OutOfTheBox.Modules
             txtUser.TextChanged += h;
             txtPassword.TextChanged += h;
             h(null, null);
+
+            /* Settings */
+            string hst = null, usr = null, pw = null;
+            Settings.Get<string>("SQL_host", ref hst);
+            Settings.Get<string>("SQL_user", ref usr);
+            Settings.Get<string>("SQL_pass", ref pw);
+
+            if (hst != null && usr != null && pw != null)
+            {
+                txtHost.Text = hst;
+                txtUser.Text = usr;
+                txtPassword.Text = pw;
+            }
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -76,6 +90,10 @@ namespace OutOfTheBox.Modules
                         connection.Close();
                         BeginInvoke((Common.Action)delegate
                         {
+                            Settings.Set<string>("SQL_host", txtHost.Text);
+                            Settings.Set<string>("SQL_user", txtUser.Text);
+                            Settings.Set<string>("SQL_pass", txtPassword.Text);
+
                             ModuleTree.SQL.Main main = new ModuleTree.SQL.Main(new ModuleTree.SQL.MySQL(connection));
                             main.Show();
                             main.FormClosed += delegate { this.Close(); };
