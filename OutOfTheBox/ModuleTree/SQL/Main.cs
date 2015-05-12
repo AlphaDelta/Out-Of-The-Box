@@ -221,7 +221,7 @@ namespace OutOfTheBox.ModuleTree.SQL
         {
             if (schemata)
             {
-                SQLResult q = this.Query("SELECT `schema_name` FROM `information_schema`.`SCHEMATA`");
+                SQLResult q = this.Query("SHOW DATABASES");
 
                 foreach (object[] row in q.Rows)
                     if (row.Length > 0)
@@ -236,7 +236,7 @@ namespace OutOfTheBox.ModuleTree.SQL
 
         public override void PopulateNode(TreeNode n)
         {
-            SQLResult q = this.Query("SELECT `table_name` FROM `information_schema`.`TABLES` WHERE table_schema='" + Main.Sanitize(n.Text) + "'");
+            SQLResult q = this.Query("SHOW TABLES FROM `" + Main.Sanitize(n.Text) + "`");
 
             foreach (object[] row in q.Rows)
                 if (row.Length > 0)
@@ -264,7 +264,7 @@ namespace OutOfTheBox.ModuleTree.SQL
                     if (PopulateTable_iteration != store) return;
                     l.Invoke((Common.Action)delegate { l.Columns.Clear(); l.Items.Clear(); });
 
-                    SQLResult columns = this.Query("SELECT `column_name` FROM `information_schema`.`COLUMNS` WHERE table_name='" + Main.Sanitize(table) + "'");
+                    SQLResult columns = this.Query("SHOW COLUMNS FROM `" + Main.Sanitize(database) + "`.`" + Main.Sanitize(table) + "`");
                     foreach (object[] col in columns.Rows) l.BeginInvoke((Common.Action)delegate { l.Columns.Add((string)col[0]); });
 
                     SQLResult rows = this.Query("SELECT * FROM `" + Main.Sanitize(database) + "`.`" + Main.Sanitize(table) + "` LIMIT 0,50");
