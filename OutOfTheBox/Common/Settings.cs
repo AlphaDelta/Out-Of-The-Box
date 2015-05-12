@@ -28,14 +28,15 @@ namespace OutOfTheBox.Common
             Save();
         }
 
-        public static T Get<T>(string key)
+        public static bool Get<T>(string key, ref T val)
         {
             foreach (Setting pair in Data)
                 if (pair.Key == key && pair.Type == typeof(T))
                 {
-                    return (T)pair.Value;
+                    val = (T)pair.Value;
+                    return true;
                 }
-            return default(T);
+            return false;
         }
 
         static void Save()
