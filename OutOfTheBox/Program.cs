@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using OutOfTheBox.Common;
 
 namespace OutOfTheBox
 {
@@ -14,8 +15,13 @@ namespace OutOfTheBox
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            Settings.Initialize();
+
             Main m = new Main();
             Application.Run(m);
+
+            Settings.Uninitialize();
         }
     }
 }

@@ -54,6 +54,7 @@
     <Compile Include="Common\ListViewExtended.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Common\Settings.cs" />
     <Compile Include="Common\TreeViewExtended.cs">
       <SubType>Component</SubType>
     </Compile>
