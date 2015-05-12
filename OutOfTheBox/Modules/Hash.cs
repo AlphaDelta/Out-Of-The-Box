@@ -23,28 +23,32 @@ namespace OutOfTheBox.Modules
             this.DragEnter += (object sender, DragEventArgs e) => { e.Effect = DragDropEffects.Copy; };
             this.DragDrop += (object sender, DragEventArgs e) =>
             {
-                imgBox.Visible = lDrop.Visible = false;
-                pMain.Visible = true;
-                this.Size = new Size(525, 398);
+                try
+                {
+                    if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                    {
+                        string data = ((string[])e.Data.GetData(DataFormats.FileDrop))[0];
+                        txtData.Text = data;
+                        if (!File.Exists(data)) { MessageBox.Show("File no longer exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+                        if (new FileInfo(data).Length > Int32.MaxValue) { MessageBox.Show("File is too large, must be less than 2GB in size", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+                        byte[] buffer = File.ReadAllBytes(data);
+                        HexDump(buffer);
+                        ComputeHashes(buffer);
+                    }
+                    if (e.Data.GetDataPresent(DataFormats.UnicodeText))
+                    {
+                        string data = (string)e.Data.GetData(DataFormats.UnicodeText);
+                        txtData.Text = "Text";
+                        byte[] buffer = Encoding.Convert(Encoding.UTF8, Encoding.GetEncoding("Windows-1252"), System.Text.Encoding.UTF8.GetBytes(data));
+                        HexDump(buffer);
+                        ComputeHashes(buffer);
+                    }
 
-                if (e.Data.GetDataPresent(DataFormats.FileDrop))
-                {
-                    string data = ((string[])e.Data.GetData(DataFormats.FileDrop))[0];
-                    txtData.Text = data;
-                    if (!File.Exists(data)) { MessageBox.Show("File no longer exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
-                    if (new FileInfo(data).Length > Int32.MaxValue) { MessageBox.Show("File is too large, must be less than 2GB in size", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
-                    byte[] buffer = File.ReadAllBytes(data);
-                    HexDump(buffer);
-                    ComputeHashes(buffer);
+                    imgBox.Visible = lDrop.Visible = false;
+                    pMain.Visible = true;
+                    this.Size = new Size(525, 398);
                 }
-                if (e.Data.GetDataPresent(DataFormats.UnicodeText))
-                {
-                    string data = (string)e.Data.GetData(DataFormats.UnicodeText);
-                    txtData.Text = "Text";
-                    byte[] buffer = Encoding.Convert(Encoding.UTF8, Encoding.GetEncoding("Windows-1252"), System.Text.Encoding.UTF8.GetBytes(data));
-                    HexDump(buffer);
-                    ComputeHashes(buffer);
-                }
+                catch (IOException) { MessageBox.Show("File could not be accessed, make sure another program is not already using it", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             };
             this.KeyPreview = true;
             this.KeyDown += (object sender, KeyEventArgs e) =>
@@ -65,17 +69,21 @@ namespace OutOfTheBox.Modules
                     }
                     else if (Clipboard.ContainsFileDropList())
                     {
-                        imgBox.Visible = lDrop.Visible = false;
-                        pMain.Visible = true;
-                        this.Size = new Size(525, 398);
+                        try
+                        {
+                            string data = Clipboard.GetFileDropList()[0];
+                            txtData.Text = data;
+                            if (!File.Exists(data)) { MessageBox.Show("File no longer exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+                            if (new FileInfo(data).Length > Int32.MaxValue) { MessageBox.Show("File is too large, must be less than 2GB in size", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+                            byte[] buffer = File.ReadAllBytes(data);
+                            HexDump(buffer);
+                            ComputeHashes(buffer);
 
-                        string data = Clipboard.GetFileDropList()[0];
-                        txtData.Text = data;
-                        if (!File.Exists(data)) { MessageBox.Show("File no longer exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);  return; }
-                        if (new FileInfo(data).Length > Int32.MaxValue) { MessageBox.Show("File is too large, must be less than 2GB in size", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
-                        byte[] buffer = File.ReadAllBytes(data);
-                        HexDump(buffer);
-                        ComputeHashes(buffer);
+                            imgBox.Visible = lDrop.Visible = false;
+                            pMain.Visible = true;
+                            this.Size = new Size(525, 398);
+                        }
+                        catch (IOException) { MessageBox.Show("File could not be accessed, make sure another program is not already using it", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                     }
                 }
             };
