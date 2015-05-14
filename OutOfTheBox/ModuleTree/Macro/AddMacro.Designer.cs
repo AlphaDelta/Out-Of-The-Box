@@ -30,15 +30,15 @@
         {
             this.txtHotkey = new System.Windows.Forms.TextBox();
             this.btnHotkey = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbInfo = new System.Windows.Forms.GroupBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbAction = new System.Windows.Forms.GroupBox();
             this.box = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.gbInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtHotkey
@@ -62,22 +62,23 @@
             this.btnHotkey.TabIndex = 3;
             this.btnHotkey.Text = "Set";
             this.btnHotkey.UseVisualStyleBackColor = true;
+            this.btnHotkey.Click += new System.EventHandler(this.btnHotkey_Click);
             // 
-            // groupBox1
+            // gbInfo
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtName);
-            this.groupBox1.Controls.Add(this.txtHotkey);
-            this.groupBox1.Controls.Add(this.btnHotkey);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(301, 78);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Information";
+            this.gbInfo.Controls.Add(this.label2);
+            this.gbInfo.Controls.Add(this.label1);
+            this.gbInfo.Controls.Add(this.txtName);
+            this.gbInfo.Controls.Add(this.txtHotkey);
+            this.gbInfo.Controls.Add(this.btnHotkey);
+            this.gbInfo.Location = new System.Drawing.Point(12, 12);
+            this.gbInfo.Name = "gbInfo";
+            this.gbInfo.Size = new System.Drawing.Size(301, 78);
+            this.gbInfo.TabIndex = 0;
+            this.gbInfo.TabStop = false;
+            this.gbInfo.Text = "Information";
             // 
             // txtName
             // 
@@ -106,16 +107,17 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Hotkey:";
             // 
-            // groupBox2
+            // gbAction
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbAction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 96);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(301, 168);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Action";
+            this.gbAction.Location = new System.Drawing.Point(12, 96);
+            this.gbAction.Name = "gbAction";
+            this.gbAction.Size = new System.Drawing.Size(301, 161);
+            this.gbAction.TabIndex = 4;
+            this.gbAction.TabStop = false;
+            this.gbAction.Text = "Action";
             // 
             // box
             // 
@@ -136,6 +138,7 @@
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
             // 
@@ -146,6 +149,7 @@
             this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // AddMacro
             // 
@@ -156,12 +160,12 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.box);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbAction);
+            this.Controls.Add(this.gbInfo);
             this.Name = "AddMacro";
             this.Text = "Add macro";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbInfo.ResumeLayout(false);
+            this.gbInfo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -170,11 +174,11 @@
 
         private System.Windows.Forms.TextBox txtHotkey;
         private System.Windows.Forms.Button btnHotkey;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbInfo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbAction;
         private System.Windows.Forms.Label box;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
