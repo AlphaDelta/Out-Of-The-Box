@@ -97,6 +97,12 @@
     <Compile Include="Modules\SQL.Designer.cs">
       <DependentUpon>SQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModuleTree\Macro\AddMacro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleTree\Macro\AddMacro.Designer.cs">
+      <DependentUpon>AddMacro.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModuleTree\SQL\Main.cs">
       <SubType>Form</SubType>
     </Compile>

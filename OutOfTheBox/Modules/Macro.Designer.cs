@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.list = new OutOfTheBox.Common.ListViewExtended();
-            this.column = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.box = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.colHotkey = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // list
@@ -41,7 +42,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.list.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.list.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.column});
+            this.colName,
+            this.colHotkey});
             this.list.FullRowSelect = true;
             this.list.GridLines = true;
             this.list.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
@@ -55,10 +57,10 @@
             this.list.UseCompatibleStateImageBehavior = false;
             this.list.View = System.Windows.Forms.View.Details;
             // 
-            // column
+            // colName
             // 
-            this.column.Text = "Macro";
-            this.column.Width = 208;
+            this.colName.Text = "Macro";
+            this.colName.Width = 208;
             // 
             // box
             // 
@@ -99,8 +101,9 @@
         #endregion
 
         private Common.ListViewExtended list;
-        private System.Windows.Forms.ColumnHeader column;
+        private System.Windows.Forms.ColumnHeader colName;
         private System.Windows.Forms.Label box;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ColumnHeader colHotkey;
     }
 }

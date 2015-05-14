@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using OutOfTheBox.Common;
+using OutOfTheBox.ModuleTree.Macro;
 
 namespace OutOfTheBox.Modules
 {
@@ -56,7 +57,21 @@ namespace OutOfTheBox.Modules
             //this.ResizeEnd += delegate { list.Scrollable = true; };
 
             //list.ExtType = Common.ListViewExtendedType.Clean;
-            column.Width = -1;
+            colName.Width = -1;
+            colHotkey.Width = -1;
+
+            /* Context menu */
+            ContextMenuStrip cm = new ContextMenuStrip();
+
+            ToolStripMenuItem m1 = new ToolStripMenuItem("Add macro...");
+            m1.Click += delegate
+            {
+                AddMacro f = new AddMacro();
+                f.ShowDialog();
+            };
+            cm.Items.Add(m1);
+
+            list.ContextMenuStrip = cm;
 
             /* System tray */
             #region System tray
