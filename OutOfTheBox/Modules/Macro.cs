@@ -29,7 +29,7 @@ namespace OutOfTheBox.Modules
             list.LargeImageList = il;
             list.SmallImageList = il;
 
-            list.Items.Add(new ListViewItem("Words") { ImageIndex = 1 });
+            //list.Items.Add(new ListViewItem("Words") { ImageIndex = 1 });
 
             //ShowInTaskbar = false;
             //WindowState = FormWindowState.Minimized;

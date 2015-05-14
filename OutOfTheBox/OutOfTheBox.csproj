@@ -138,6 +138,9 @@
     <EmbeddedResource Include="Modules\SQL.resx">
       <DependentUpon>SQL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModuleTree\Macro\AddMacro.resx">
+      <DependentUpon>AddMacro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModuleTree\SQL\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
