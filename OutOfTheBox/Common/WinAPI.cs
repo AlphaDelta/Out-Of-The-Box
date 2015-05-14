@@ -242,7 +242,6 @@ namespace OutOfTheBox.Common
                 "Undefined",
                 "VK_JUNJA",
                 "VK_FINAL",
-                "VK_HANJA",
                 "VK_KANJI",
                 "Undefined",
                 "VK_ESCAPE",
@@ -472,7 +471,8 @@ namespace OutOfTheBox.Common
                 "VK_ZOOM",
                 "VK_NONAME",
                 "VK_PA1",
-                "VK_OEM_CLEAR"
+                "VK_OEM_CLEAR",
+                ""
             };
 
             static IntPtr hook = IntPtr.Zero;

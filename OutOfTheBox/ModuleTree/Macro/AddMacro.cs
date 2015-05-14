@@ -36,7 +36,7 @@ namespace OutOfTheBox.ModuleTree.Macro
 
         void KeyDownEvent(WinAPI.KeyboardHook.DownEventArgs e)
         {
-            MessageBox.Show(WinAPI.KeyboardHook.Names[e.Key]);
+            MessageBox.Show(WinAPI.KeyboardHook.Names[e.Key - 1] + ":" + e.Key.ToString("X2"));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
