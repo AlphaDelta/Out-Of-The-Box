@@ -26,17 +26,36 @@ namespace OutOfTheBox.ModuleTree.Macro
             {
                 WinAPI.KeyboardHook.Hook();
                 WinAPI.KeyboardHook.DownEvent += KeyDownEvent;
+                //WinAPI.KeyboardHook.UpEvent += KeyUpEvent;
+
+                txtHotkey.Focus();
             }
             else
             {
+                //WinAPI.KeyboardHook.UpEvent -= KeyUpEvent;
                 WinAPI.KeyboardHook.DownEvent -= KeyDownEvent;
                 WinAPI.KeyboardHook.Unhook();
             }
         }
 
-        void KeyDownEvent(WinAPI.KeyboardHook.DownEventArgs e)
+        void KeyDownEvent(WinAPI.KeyboardHook.DownEventArgs e) { RefreshKeys(); }
+        //void KeyUpEvent(WinAPI.KeyboardHook.UpEventArgs e) { RefreshKeys(); }
+
+        bool[] tempstates = new bool[0xFF];
+        void RefreshKeys()
         {
-            MessageBox.Show(WinAPI.KeyboardHook.Names[e.Key - 1] + ":" + e.Key.ToString("X2"));
+            bool first = true;
+            StringBuilder b = new StringBuilder();
+            for (int i = 0; i < 0xFF; i++)
+            {
+                if (WinAPI.KeyboardHook.States[i] == false) { tempstates[i] = false; continue; }
+                tempstates[i] = true;
+
+                if (first) first = false;
+                else b.Append(" + ");
+                b.Append(WinAPI.KeyboardHook.FriendlyNames[i]);
+            }
+            Invoke((Action)delegate { txtHotkey.Text = b.ToString(); });
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

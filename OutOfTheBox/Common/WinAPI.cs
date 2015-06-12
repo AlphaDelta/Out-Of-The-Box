@@ -216,6 +216,7 @@ namespace OutOfTheBox.Common
         public class KeyboardHook
         {
             public static bool[] States = new bool[0xFF];
+            #region Key names
             public static string[] Names = new string[0xFF]
             {
                 "VK_LBUTTON", /* Left mouse button */
@@ -474,6 +475,267 @@ namespace OutOfTheBox.Common
                 "VK_OEM_CLEAR",
                 ""
             };
+            #endregion
+            #region Friendly key names
+            public static string[] FriendlyNames = new string[0xFF]
+            {
+                "", /* Left mouse button */
+                "", /* Right mouse button */
+                "",
+                "", /* Middle mouse button*/
+                "", /* X mouse button 1 */
+                "", /* X mouse button 2 */
+                "Undefined",
+                "Back",
+                "Tab",
+                "Reserved",
+                "Reserved",
+                "Clear",
+                "Enter",
+                "Undefined",
+                "Undefined",
+                "Shift",
+                "Control",
+                "Alt", /* Alt */
+                "Pause",
+                "Capslock", /* Capslock */
+                "Kana",
+                "Undefined",
+                "Junja",
+                "Final",
+                "Kanji",
+                "Undefined",
+                "Escape",
+                "Convert",
+                "Non-convert",
+                "Accept",
+                "Mode change",
+                "Spacebar",
+                "Previous",
+                "Next",
+                "End",
+                "Home",
+                "Left",
+                "Up",
+                "Right",
+                "Down",
+                "Select",
+                "Print",
+                "Execute",
+                "Print Screen", /* PRINT SCRN */
+                "Insert",
+                "Delete",
+                "Help",
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "Undefined",
+                "Undefined",
+                "Undefined",
+                "Undefined",
+                "Undefined",
+                "Undefined",
+                "Undefined",
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "H",
+                "I",
+                "J",
+                "K",
+                "L",
+                "M",
+                "N",
+                "O",
+                "P",
+                "Q",
+                "R",
+                "S",
+                "T",
+                "U",
+                "V",
+                "W",
+                "X",
+                "Y",
+                "Z",
+                "Left Windows",
+                "Right Windows",
+                "Apps",
+                "Reserved",
+                "Sleep",
+                "Numpad 0",
+                "Numpad 1",
+                "Numpad 2",
+                "Numpad 3",
+                "Numpad 4",
+                "Numpad 5",
+                "Numpad 6",
+                "Numpad 7",
+                "Numpad 8",
+                "Numpad 9",
+                "Numpad Multiply",
+                "Numpad Plus",
+                "Separator", //?
+                "Numpad Minus",
+                "Numpad Period",
+                "Numpad Divide",
+                "F1",
+                "F2",
+                "F3",
+                "F4",
+                "F5",
+                "F6",
+                "F7",
+                "F8",
+                "F9",
+                "F10",
+                "F11",
+                "F12",
+                "F13",
+                "F14",
+                "F15",
+                "F16",
+                "F17",
+                "F18",
+                "F19",
+                "F20",
+                "F21",
+                "F22",
+                "F23",
+                "F24",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "Numlock",
+                "Scroll-lock",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "LShift",
+                "RShift",
+                "LControl",
+                "RControl",
+                "LAlt",
+                "RAlt",
+                "Browser Back",
+                "Browser Forward",
+                "Browser Refresh",
+                "Browser Stop",
+                "Browser Search",
+                "Browser Favourites",
+                "Browser Home",
+                "Vol Mute",
+                "Vol Down",
+                "Vol Up",
+                "Next Track",
+                "Previous Track",
+                "Stop Track",
+                "Play/Pause Track",
+                "Mail",
+                "Media Select",
+                "App 1",
+                "App 2",
+                "Reserved",
+                "Reserved",
+                "Semi-colon",
+                "Plus",
+                "Comma",
+                "Minus",
+                "Period",
+                "Forward-slash",
+                "Grave/Tilde",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Reserved",
+                "Unassigned",
+                "Unassigned",
+                "Unassigned",
+                "Left Square-bracket",
+                "Back-slash",
+                "Right Square-bracket",
+                "Quotation mark",
+                "VK_OEM_8", //Second back-slash key?
+                "Reserved", //? From here on out
+                "OEM specific",
+                "VK_OEM_102",
+                "OEM specific",
+                "OEM specific",
+                "Process",
+                "OEM specific",
+                "Packet",
+                "Unassigned",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "OEM specific",
+                "VK_ATTN",
+                "VK_CRSEL",
+                "VK_EXSEL",
+                "VK_EREOF",
+                "VK_PLAY",
+                "VK_ZOOM",
+                "VK_NONAME",
+                "VK_PA1",
+                "VK_OEM_CLEAR",
+                ""
+            };
+            #endregion
 
             static IntPtr hook = IntPtr.Zero;
             public static void Hook()
@@ -502,12 +764,29 @@ namespace OutOfTheBox.Common
             {
                 if (nCode >= 0)
                 {
-                    if (wParam == WM_KEYDOWN && DownEvent != null)
+                    if (wParam == WM_KEYDOWN)
                     {
                         KBDLLHOOKSTRUCT hookStruct = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(KBDLLHOOKSTRUCT));
 
-                        Delegate[] receivers = DownEvent.GetInvocationList();
-                        foreach (DownEventHandler receiver in receivers) receiver.BeginInvoke(new DownEventArgs(hookStruct.vkCode), EndDownEvent, null);
+                        States[hookStruct.vkCode - 1] = true;
+
+                        if (DownEvent != null)
+                        {
+                            Delegate[] receivers = DownEvent.GetInvocationList();
+                            foreach (DownEventHandler receiver in receivers) receiver.BeginInvoke(new DownEventArgs(hookStruct.vkCode), EndDownEvent, null);
+                        }
+                    }
+                    else if (wParam == WM_KEYUP)
+                    {
+                        KBDLLHOOKSTRUCT hookStruct = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(KBDLLHOOKSTRUCT));
+
+                        States[hookStruct.vkCode - 1] = false;
+
+                        if (UpEvent != null)
+                        {
+                            Delegate[] receivers = UpEvent.GetInvocationList();
+                            foreach (UpEventHandler receiver in receivers) receiver.BeginInvoke(new UpEventArgs(hookStruct.vkCode), EndUpEvent, null);
+                        }
                     }
                 }
                 return CallNextHookEx(hook, nCode, wParam, lParam);
@@ -515,6 +794,8 @@ namespace OutOfTheBox.Common
 
             public delegate void DownEventHandler(DownEventArgs e);
             public static event DownEventHandler DownEvent;
+            public delegate void UpEventHandler(UpEventArgs e);
+            public static event UpEventHandler UpEvent;
 
             public class DownEventArgs : EventArgs
             {
@@ -526,12 +807,31 @@ namespace OutOfTheBox.Common
                 }
             }
 
+            public class UpEventArgs : EventArgs
+            {
+                public int Key;
+
+                public UpEventArgs(int key)
+                {
+                    Key = key;
+                }
+            }
+
             #region Async event terminators
             public static void EndDownEvent(IAsyncResult iar)
             {
                 System.Runtime.Remoting.Messaging.AsyncResult ar = (System.Runtime.Remoting.Messaging.AsyncResult)iar;
                 object o = ar.AsyncDelegate;
                 DownEventHandler invokedMethod = (DownEventHandler)ar.AsyncDelegate;
+
+                try { invokedMethod.EndInvoke(iar); }
+                catch { }
+            }
+            public static void EndUpEvent(IAsyncResult iar)
+            {
+                System.Runtime.Remoting.Messaging.AsyncResult ar = (System.Runtime.Remoting.Messaging.AsyncResult)iar;
+                object o = ar.AsyncDelegate;
+                UpEventHandler invokedMethod = (UpEventHandler)ar.AsyncDelegate;
 
                 try { invokedMethod.EndInvoke(iar); }
                 catch { }
