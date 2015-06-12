@@ -238,6 +238,7 @@ namespace OutOfTheBox.ModuleTree.SQL
         {
             SQLResult q = this.Query("SHOW TABLES FROM `" + Main.Sanitize(n.Text) + "`");
 
+            if(q.Result > 0)
             foreach (object[] row in q.Rows)
                 if (row.Length > 0)
                     n.TreeView.BeginInvoke((Common.Action)delegate
