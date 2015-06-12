@@ -48,6 +48,7 @@
             this.pConnecting = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lConnecting = new System.Windows.Forms.Label();
+            this.rSQLite = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.imgConnect)).BeginInit();
             this.pDBType.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -76,9 +77,9 @@
             this.pDBType.Controls.Add(this.groupBox1);
             this.pDBType.Controls.Add(this.btnConnect);
             this.pDBType.Controls.Add(this.box);
-            this.pDBType.Location = new System.Drawing.Point(1, 12);
+            this.pDBType.Location = new System.Drawing.Point(10, 11);
             this.pDBType.Name = "pDBType";
-            this.pDBType.Size = new System.Drawing.Size(285, 90);
+            this.pDBType.Size = new System.Drawing.Size(356, 93);
             this.pDBType.TabIndex = 1;
             // 
             // groupBox2
@@ -94,7 +95,7 @@
             this.groupBox2.Controls.Add(this.txtHost);
             this.groupBox2.Location = new System.Drawing.Point(156, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(117, 40);
+            this.groupBox2.Size = new System.Drawing.Size(188, 43);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
@@ -123,7 +124,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.Location = new System.Drawing.Point(70, 68);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(41, 20);
+            this.txtPassword.Size = new System.Drawing.Size(112, 20);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -133,7 +134,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUser.Location = new System.Drawing.Point(70, 42);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(41, 20);
+            this.txtUser.Size = new System.Drawing.Size(112, 20);
             this.txtUser.TabIndex = 5;
             // 
             // lHost
@@ -151,7 +152,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHost.Location = new System.Drawing.Point(70, 16);
             this.txtHost.Name = "txtHost";
-            this.txtHost.Size = new System.Drawing.Size(41, 20);
+            this.txtHost.Size = new System.Drawing.Size(112, 20);
             this.txtHost.TabIndex = 4;
             // 
             // groupBox1
@@ -160,11 +161,12 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.rMySQLi);
             this.groupBox1.Controls.Add(this.rMySQL_PHP);
+            this.groupBox1.Controls.Add(this.rSQLite);
             this.groupBox1.Controls.Add(this.rMSSQL);
             this.groupBox1.Controls.Add(this.rMySQL);
             this.groupBox1.Location = new System.Drawing.Point(12, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(138, 40);
+            this.groupBox1.Size = new System.Drawing.Size(138, 43);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Database system";
@@ -217,7 +219,7 @@
             // 
             this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConnect.Enabled = false;
-            this.btnConnect.Location = new System.Drawing.Point(198, 57);
+            this.btnConnect.Location = new System.Drawing.Point(269, 60);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(75, 23);
             this.btnConnect.TabIndex = 7;
@@ -230,9 +232,9 @@
             this.box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.box.BackColor = System.Drawing.SystemColors.Menu;
-            this.box.Location = new System.Drawing.Point(2, 49);
+            this.box.Location = new System.Drawing.Point(2, 52);
             this.box.Name = "box";
-            this.box.Size = new System.Drawing.Size(283, 41);
+            this.box.Size = new System.Drawing.Size(354, 41);
             this.box.TabIndex = 10;
             // 
             // pConnecting
@@ -264,6 +266,17 @@
             this.lConnecting.TabIndex = 0;
             this.lConnecting.Text = "Connecting to null database";
             this.lConnecting.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rSQLite
+            // 
+            this.rSQLite.AutoSize = true;
+            this.rSQLite.Enabled = false;
+            this.rSQLite.Location = new System.Drawing.Point(10, 111);
+            this.rSQLite.Name = "rSQLite";
+            this.rSQLite.Size = new System.Drawing.Size(57, 17);
+            this.rSQLite.TabIndex = 3;
+            this.rSQLite.Text = "SQLite";
+            this.rSQLite.UseVisualStyleBackColor = true;
             // 
             // SQL
             // 
@@ -310,5 +323,6 @@
         private System.Windows.Forms.Panel pConnecting;
         private System.Windows.Forms.Label lConnecting;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.RadioButton rSQLite;
     }
 }
