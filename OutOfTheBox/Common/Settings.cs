@@ -55,11 +55,11 @@ namespace OutOfTheBox.Common
                 else if (s.Type == typeof(float)) sb.Append("FLT ");
                 else if (s.Type == typeof(decimal)) sb.Append("DEC ");
                 sb.Append(s.Key + ": ");
-                sb.Append(s.Value);
+                sb.Append(s.Value.ToString());
             }
 
             file.SetLength(0);
-            byte[] bytes = Encoding.UTF8.GetBytes(sb.ToString());
+            byte[] bytes = Encoding.UTF8.GetBytes(DRX.Crypt(sb.ToString()));
             file.Write(bytes, 0, bytes.Length);
         }
 
@@ -70,8 +70,10 @@ namespace OutOfTheBox.Common
             if (!Directory.Exists(appdata)) Directory.CreateDirectory(appdata);
             if (File.Exists(appdata + "settings"))
             {
-                string[] setmem = File.ReadAllLines(appdata + "settings");
-                foreach (string line in setmem)
+                string setmem = File.ReadAllText(appdata + "settings");
+                string[] decrypt = DRX.Crypt(setmem).Split('\n');
+
+                foreach (string line in decrypt)
                 {
                     string[] spl = line.Split(' ');
                     if (spl.Length < 3) continue;

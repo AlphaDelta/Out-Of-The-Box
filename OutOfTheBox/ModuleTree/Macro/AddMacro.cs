@@ -19,7 +19,7 @@ namespace OutOfTheBox.ModuleTree.Macro
         bool flag = false;
         private void btnHotkey_Click(object sender, EventArgs e)
         {
-            gbAction.Enabled = btnAdd.Enabled = btnCancel.Enabled = txtName.Enabled = flag;
+            this.ControlBox = gbAction.Enabled = btnAdd.Enabled = btnCancel.Enabled = txtName.Enabled = flag;
             flag = !flag;
 
             if (flag)
@@ -58,9 +58,18 @@ namespace OutOfTheBox.ModuleTree.Macro
             Invoke((Action)delegate { txtHotkey.Text = b.ToString(); });
         }
 
+        Color bad = Color.FromArgb(255, 200, 200);
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            bool good = false;
 
+            if (txtName.Text == "") { txtName.BackColor = bad; good = false; }
+            else txtName.BackColor = SystemColors.Window;
+
+            if (txtHotkey.Text == "None") { txtHotkey.BackColor = bad; good = false; }
+            else txtHotkey.BackColor = SystemColors.Window;
+
+            if (!good) return;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

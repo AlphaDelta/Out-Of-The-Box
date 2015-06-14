@@ -31,14 +31,14 @@ namespace OutOfTheBox
             list.BeginUpdate();
             foreach (Type c in classes)
             {
-                if (c.BaseType != typeof(Form) || c.Namespace != global::Internals.ROOT_NAMESPACE + ".Modules") continue; //If it isn't a form or it isn't in <root>.Modules disregard it
+                if (c.BaseType != typeof(Form) || c.Namespace != Internals.ROOT_NAMESPACE + ".Modules") continue; //If it isn't a form or it isn't in <root>.Modules disregard it
 
                 string name = c.Name;
                 object[] mods = c.GetCustomAttributes(typeof(Module), false); //Get the custom attributes so that we can get the module information
                 Module mod;
                 if (mods.Length > 0)
                 {
-                    mod = (Module)mods[0]; Modules.Add(mod); name = mod.Name + (global::Internals.DEBUG ? " - 0x" + mod.Version.ToString("X6") : ""); 
+                    mod = (Module)mods[0]; Modules.Add(mod); name = mod.Name + (Internals.DEBUG ? " - 0x" + mod.Version.ToString("X6") : ""); 
                     list.Items.Add(new ListViewItemGradient(name) { BackColor = Color.White, Font = rFont });
                     Types.Add(c);
                 }

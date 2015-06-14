@@ -31,9 +31,9 @@
             this.txtHotkey = new System.Windows.Forms.TextBox();
             this.btnHotkey = new System.Windows.Forms.Button();
             this.gbInfo = new System.Windows.Forms.GroupBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.gbAction = new System.Windows.Forms.GroupBox();
             this.box = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -49,14 +49,14 @@
             this.txtHotkey.Location = new System.Drawing.Point(56, 48);
             this.txtHotkey.Name = "txtHotkey";
             this.txtHotkey.ReadOnly = true;
-            this.txtHotkey.Size = new System.Drawing.Size(170, 20);
+            this.txtHotkey.Size = new System.Drawing.Size(184, 20);
             this.txtHotkey.TabIndex = 2;
             this.txtHotkey.Text = "None";
             // 
             // btnHotkey
             // 
             this.btnHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHotkey.Location = new System.Drawing.Point(232, 46);
+            this.btnHotkey.Location = new System.Drawing.Point(246, 46);
             this.btnHotkey.Name = "btnHotkey";
             this.btnHotkey.Size = new System.Drawing.Size(63, 23);
             this.btnHotkey.TabIndex = 3;
@@ -75,28 +75,10 @@
             this.gbInfo.Controls.Add(this.btnHotkey);
             this.gbInfo.Location = new System.Drawing.Point(12, 12);
             this.gbInfo.Name = "gbInfo";
-            this.gbInfo.Size = new System.Drawing.Size(301, 78);
+            this.gbInfo.Size = new System.Drawing.Size(315, 78);
             this.gbInfo.TabIndex = 0;
             this.gbInfo.TabStop = false;
             this.gbInfo.Text = "Information";
-            // 
-            // txtName
-            // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(56, 19);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(239, 20);
-            this.txtName.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Name:";
             // 
             // label2
             // 
@@ -107,6 +89,24 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Hotkey:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Name:";
+            // 
+            // txtName
+            // 
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.Location = new System.Drawing.Point(56, 19);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(253, 20);
+            this.txtName.TabIndex = 1;
+            // 
             // gbAction
             // 
             this.gbAction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -114,7 +114,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbAction.Location = new System.Drawing.Point(12, 96);
             this.gbAction.Name = "gbAction";
-            this.gbAction.Size = new System.Drawing.Size(301, 161);
+            this.gbAction.Size = new System.Drawing.Size(315, 253);
             this.gbAction.TabIndex = 4;
             this.gbAction.TabStop = false;
             this.gbAction.Text = "Action";
@@ -124,15 +124,15 @@
             this.box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.box.BackColor = System.Drawing.SystemColors.Menu;
-            this.box.Location = new System.Drawing.Point(0, 267);
+            this.box.Location = new System.Drawing.Point(0, 359);
             this.box.Name = "box";
-            this.box.Size = new System.Drawing.Size(325, 41);
+            this.box.Size = new System.Drawing.Size(339, 41);
             this.box.TabIndex = 4;
             // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(238, 275);
+            this.btnCancel.Location = new System.Drawing.Point(252, 367);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 11;
@@ -143,7 +143,7 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Location = new System.Drawing.Point(157, 275);
+            this.btnAdd.Location = new System.Drawing.Point(171, 367);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 10;
@@ -156,13 +156,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(325, 308);
+            this.ClientSize = new System.Drawing.Size(339, 400);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.box);
             this.Controls.Add(this.gbAction);
             this.Controls.Add(this.gbInfo);
             this.Name = "AddMacro";
+            this.ShowIcon = false;
             this.Text = "Add macro";
             this.gbInfo.ResumeLayout(false);
             this.gbInfo.PerformLayout();

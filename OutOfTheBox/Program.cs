@@ -16,6 +16,13 @@ namespace OutOfTheBox
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Internals.CRYPT_KEY_STATIC =
+            ((char)('K' ^ Internals.VERSION_MAJOR)).ToString() +
+            ((char)('E' ^ Internals.VERSION_MINOR)).ToString() +
+            ((char)('Y' ^ Internals.VERSION_PATCH)).ToString() +
+            "RdQZaXP5iqzKpLZFaxkN";
+            Internals.CRYPT_KEY_DYNAMIC = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+
             Settings.Initialize();
 
             Main m = new Main();

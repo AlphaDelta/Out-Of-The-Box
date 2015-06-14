@@ -123,11 +123,11 @@ namespace OutOfTheBox.Modules
                     input = File.Open(i.Text, FileMode.Open, FileAccess.Read, FileShare.Read);
                     while (true)
                     {
-                        byte[] buffer = new byte[global::Internals.BUFFER_SIZE];
-                        int read = input.Read(buffer, 0, global::Internals.BUFFER_SIZE);
+                        byte[] buffer = new byte[Internals.BUFFER_SIZE];
+                        int read = input.Read(buffer, 0, Internals.BUFFER_SIZE);
                         if (read < 1) break;
                         output.Write(buffer, 0, read);
-                        if (read < global::Internals.BUFFER_SIZE) break;
+                        if (read < Internals.BUFFER_SIZE) break;
                     }
                     input.Close();
                 }

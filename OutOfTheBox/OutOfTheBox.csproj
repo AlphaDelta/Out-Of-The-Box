@@ -51,6 +51,7 @@
     <Compile Include="Common\DataGridViewExtended.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Common\DRX.cs" />
     <Compile Include="Common\ListViewExtended.cs">
       <SubType>Component</SubType>
     </Compile>
