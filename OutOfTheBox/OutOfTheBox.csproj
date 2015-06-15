@@ -59,6 +59,7 @@
     <Compile Include="Common\TreeViewExtended.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Common\Types.cs" />
     <Compile Include="Common\WinAPI.cs" />
     <Compile Include="Internals.cs" />
     <Compile Include="Main.cs">
