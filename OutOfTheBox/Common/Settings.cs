@@ -34,8 +34,9 @@ namespace OutOfTheBox.Common
 
         public static bool Get<T>(string key, ref T val)
         {
+            bool ignore = (typeof(T) == typeof(object));
             foreach (Setting pair in Data)
-                if (pair.Key == key && pair.Type == typeof(T))
+                if (pair.Key == key && (ignore || pair.Type == typeof(T)))
                 {
                     val = (T)pair.Value;
                     return true;
@@ -144,8 +145,9 @@ namespace OutOfTheBox.Common
                     {
                         l++;
                         if (l < 3) continue;
+                        if (l != 3) vl.Append(' ');
                         vl.Append(s);
-                        if (l != 2) vl.Append(' ');
+                        //if (l != 2) vl.Append(' ');
                     }
                     string val = vl.ToString();
 
